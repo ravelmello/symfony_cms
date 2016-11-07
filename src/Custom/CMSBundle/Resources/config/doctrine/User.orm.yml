@@ -1,0 +1,21 @@
+Custom\CMSBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: Custom\CMSBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        username:
+            type: string
+            length: '38'
+        password:
+            type: string
+            length: '64'
+    lifecycleCallbacks: {  }
