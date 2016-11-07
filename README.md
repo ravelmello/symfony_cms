@@ -1,3 +1,6 @@
+
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/f7a11b26-da1e-46fe-bd96-14a63143e994/mini.png)](https://insight.sensiolabs.com/projects/f7a11b26-da1e-46fe-bd96-14a63143e994)
+
 Symfony Standard Edition
 ========================
 
