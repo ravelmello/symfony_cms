@@ -16,7 +16,6 @@ security:
             entity: { class: CustomCMSBundle:User, property: username }
     firewalls:
         main:
-            pattern: /.*
             form_login:
                 login_path: /login
                 check_path: /login_check
@@ -27,6 +26,5 @@ security:
             security: true
             anonymous: true
     access_control:
-        - { path: /login, roles: IS_AUTENTICATED_ANONUMOUSLY }
-        - { path: /cms/user, roles: IS_AUTENTICATED_ANONUMOUSLY }
-        - { path: /.*, roles: IS_AUTENTICATED_ANONUMOUSLY }
+        - { path: /login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: /.*, roles: ROLE_USER }

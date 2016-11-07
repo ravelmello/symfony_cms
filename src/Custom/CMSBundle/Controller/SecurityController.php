@@ -3,29 +3,23 @@
 namespace Custom\CMSBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Security\Core\SecurityContext;
+use Symfony\Component\HttpFoundation\Request;
+
 
 class SecurityController extends Controller
 {
-    public function loginAction()
+    public function loginAction(Request $request)
     {
-        $request = $this->getRequest();
-        $session = $request->getSession();
-
-        // get the login error if there is one
-        if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
-            $error = $request->attributes->get(
-                SecurityContext::AUTHENTICATION_ERROR
-            );
-        } else {
-            $error = $session->get(SecurityContext::AUTHENTICATION_ERROR);
-            $session->remove(SecurityContext::AUTHENTICATION_ERROR);
-        }
+        $authenticationUtils = $this->get('security.authentication_utils');
+        $error = $authenticationUtils->getLastAuthenticationError();
+        $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render(
-            'CustomCMSBundle:Security:login.html.twig',
+            'C:\xampp\htdocs\php_projects\cms\src\Custom\CMSBundle\Resources\views\login.html.twig',
             array(
-                'error'         => $error,
+                // last username entered by the user
+                'last_username' => $lastUsername,
+                'error'         => $error
             )
         );
     }
