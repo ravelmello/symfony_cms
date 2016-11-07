@@ -147,16 +147,9 @@ class User implements UserInterface
         return array('ROLE_USER');
     }
 
-    /**
-     * Returns the salt that was originally used to encode the password.
-     *
-     * This can return null if the password was not encoded using a salt.
-     *
-     * @return string|null The salt
-     */
     public function getSalt()
     {
-        // TODO: Implement getSalt() method.
+
     }
 
     /**
@@ -167,7 +160,7 @@ class User implements UserInterface
      */
     public function eraseCredentials()
     {
-        // TODO: Implement eraseCredentials() method.
+
     }
 }
 
